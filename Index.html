@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Үш қуаныш тойына шақыру</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#F0EBE3;display:flex;justify-content:center;min-height:100vh}
+.inv{font-family:'Inter',sans-serif;background:#F8F4EE;color:#3D2B1F;max-width:420px;width:100%;min-height:100vh;padding-bottom:56px;box-shadow:0 0 40px rgba(0,0,0,0.08)}
+
+.top-gem{text-align:center;padding:34px 0 18px}
+.hero-eyebrow{font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:#8C7B6B;text-align:center;margin-bottom:12px}
+.hero-script{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:300;font-style:italic;color:#3D2B1F;line-height:1.05;text-align:center;padding:0 28px 6px}
+.hero-year{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#8C7B6B;text-align:center;margin-top:10px;margin-bottom:24px}
+
+.divider{display:flex;align-items:center;gap:12px;padding:0 28px;margin:4px 0}
+.divider-line{flex:1;height:0.5px;background:#C9A84C;opacity:0.35}
+.divider-gem{width:5px;height:5px;background:#C9A84C;transform:rotate(45deg);opacity:0.65;flex-shrink:0}
+
+.invite-block{text-align:center;padding:26px 34px 22px;font-size:13.5px;line-height:1.95;color:#5C4A3A;font-weight:300}
+
+.date-block{background:#EDE5D8;margin:14px 20px;padding:32px 24px;text-align:center}
+.date-main{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#3D2B1F;line-height:1}
+.date-main em{color:#C9A84C;font-style:italic}
+.date-sub{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8C7B6B;margin-top:8px}
+.date-time{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#3D2B1F;margin-top:6px}
+.date-time em{color:#C9A84C;font-style:italic}
+
+.occasions{padding:10px 28px 6px}
+.occ{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:0.5px solid #E0D5C5}
+.occ:last-child{border-bottom:none}
+.occ-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#C9A84C;line-height:1;flex-shrink:0;width:28px;text-align:center;margin-top:2px;opacity:0.85}
+.occ-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:#3D2B1F;line-height:1.2;margin-bottom:4px}
+.occ-sub{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#8C7B6B;font-weight:300}
+
+.details-block{background:#EDE5D8;margin:14px 20px;padding:22px 22px}
+.detail-row{display:flex;align-items:flex-start;gap:14px;padding:10px 0;border-bottom:0.5px solid #D8CEBF}
+.detail-row:last-child{border-bottom:none}
+.detail-icon{width:15px;flex-shrink:0;margin-top:2px;opacity:0.55}
+.detail-label{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#8C7B6B;margin-bottom:4px}
+.detail-val{font-family:'Cormorant Garamond',serif;font-size:16px;color:#3D2B1F;line-height:1.35}
+.map-link{display:inline-block;margin-top:5px;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#C9A84C;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.6);padding-bottom:1px}
+
+.countdown{text-align:center;padding:28px 28px 22px}
+.cd-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#8C7B6B;margin-bottom:18px}
+.cd-blocks{display:flex;justify-content:center;gap:6px}
+.cd-block{text-align:center;min-width:56px;background:#EDE5D8;border:0.5px solid #D8CEBF;padding:12px 8px 10px}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#3D2B1F;line-height:1;display:block}
+.cd-unit{font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:#8C7B6B;margin-top:4px;display:block}
+
+.rsvp-block{padding:22px 20px 0}
+.rsvp-eyebrow{text-align:center;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#8C7B6B;margin-bottom:12px}
+.rsvp-title{font-family:'Cormorant Garamond',serif;font-size:18px;color:#3D2B1F;margin-bottom:18px;font-weight:300;line-height:1.5;text-align:center}
+.rsvp-btn{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border:0.5px solid #C9A84C;margin-bottom:10px;text-decoration:none;color:#3D2B1F;background:transparent;transition:background 0.2s}
+.rsvp-btn:hover{background:#EDE5D8}
+.rsvp-btn-text{font-size:13px;letter-spacing:0.05em;font-weight:300}
+.rsvp-btn-arrow{color:#C9A84C;font-size:15px}
+
+.footer{text-align:center;padding:32px 28px 0}
+.footer-script{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:#3D2B1F;margin-bottom:5px}
+.footer-script span{color:#C9A84C}
+.footer-sub{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8C7B6B;font-weight:300}
+</style>
+</head>
+<body>
+<div class="inv">
+
+  <div class="top-gem">
+    <svg width="140" height="22" viewBox="0 0 140 22">
+      <line x1="0" y1="11" x2="52" y2="11" stroke="#C9A84C" stroke-width="0.5" opacity="0.5"/>
+      <line x1="88" y1="11" x2="140" y2="11" stroke="#C9A84C" stroke-width="0.5" opacity="0.5"/>
+      <polygon points="70,2 77,11 70,20 63,11" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.7"/>
+      <circle cx="70" cy="11" r="2.5" fill="#C9A84C" opacity="0.7"/>
+      <circle cx="57" cy="11" r="1.5" fill="#C9A84C" opacity="0.35"/>
+      <circle cx="83" cy="11" r="1.5" fill="#C9A84C" opacity="0.35"/>
+    </svg>
+  </div>
+
+  <p class="hero-eyebrow">Шақыру</p>
+  <div class="hero-script">Үш қуаныш<br>тойына</div>
+  <p class="hero-year">2026 жыл</p>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-gem"></div><div class="divider-line"></div></div>
+
+  <div class="invite-block">
+    Құрметті ағайын-туыс, қадірлі құда-жекжат,<br>
+    сыйласқан дос-жаран, тілектес ұжымдастар,<br>
+    көршілер!<br><br>
+    Бір кешті үш қуанышпен атап өтуге<br>
+    сіздерді шын жүректен шақырамыз.
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-gem"></div><div class="divider-line"></div></div>
+
+  <div class="date-block">
+    <div class="date-main"><em>2</em> тамыз</div>
+    <div class="date-time">сағат <em>18:00</em></div>
+    <div class="date-sub">2026 жыл · жексенбі</div>
+  </div>
+
+  <div class="divider" style="margin-top:10px"><div class="divider-line"></div><div class="divider-gem"></div><div class="divider-line"></div></div>
+
+  <div class="occasions">
+    <div class="occ">
+      <div class="occ-num">I</div>
+      <div>
+        <div class="occ-title">Зият пен Ардақтың зейнетке шығуы</div>
+        <div class="occ-sub">Ұзақ жылғы еңбектің мерейлі сәті</div>
+      </div>
+    </div>
+    <div class="occ">
+      <div class="occ-num">II</div>
+      <div>
+        <div class="occ-title">Аронның сүндет тойы</div>
+        <div class="occ-sub">Дәстүрлі мерей</div>
+      </div>
+    </div>
+    <div class="occ">
+      <div class="occ-num">III</div>
+      <div>
+        <div class="occ-title">Алинардың тұсау кесері</div>
+        <div class="occ-sub">Алғашқы қадам</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-gem"></div><div class="divider-line"></div></div>
+
+  <div class="details-block">
+    <div class="detail-row">
+      <svg class="detail-icon" viewBox="0 0 16 16" fill="none" stroke="#8C7B6B" stroke-width="0.9">
+        <path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6C3.5 9.5 8 14.5 8 14.5S12.5 9.5 12.5 6C12.5 3.5 10.5 1.5 8 1.5Z"/><circle cx="8" cy="6" r="1.5"/>
+      </svg>
+      <div>
+        <div class="detail-label">Мекенжайы</div>
+        <div class="detail-val">Алматы қ., Бесағаш ауылы<br>«Ақ-Сарай» мейрамханасы</div>
+        <a class="map-link" href="https://2gis.kz/almaty/geo/70000001025824800/77.048165,43.305045" target="_blank">Картаға өту →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="countdown">
+    <div class="cd-label">Тойға дейін</div>
+    <div class="cd-blocks">
+      <div class="cd-block"><span class="cd-num" id="cd-d">--</span><span class="cd-unit">күн</span></div>
+      <div class="cd-block"><span class="cd-num" id="cd-h">--</span><span class="cd-unit">сағат</span></div>
+      <div class="cd-block"><span class="cd-num" id="cd-m">--</span><span class="cd-unit">минут</span></div>
+      <div class="cd-block"><span class="cd-num" id="cd-s">--</span><span class="cd-unit">секунд</span></div>
+    </div>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-gem"></div><div class="divider-line"></div></div>
+
+  <div class="rsvp-block">
+    <div class="rsvp-eyebrow">Растау</div>
+    <div class="rsvp-title">Тойға қатысатыныңызды<br>растауыңызды өтінеміз</div>
+    <a class="rsvp-btn" href="https://wa.me/77052739999?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7!%20%D0%96%D0%B5%D0%BA%D0%B5%2C%20%D0%B1%D0%B0%D1%80%D0%B0%D0%BC%D1%8B%D0%BD." target="_blank">
+      <span class="rsvp-btn-text">Иә, өзім барамын</span>
+      <span class="rsvp-btn-arrow">→</span>
+    </a>
+    <a class="rsvp-btn" href="https://wa.me/77052739999?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7!%20%D0%9E%D1%82%D0%B1%D0%B0%D1%81%D1%8B%D0%BC%D0%BC%D0%B5%D0%BD%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%BC%D1%96%D0%B7." target="_blank">
+      <span class="rsvp-btn-text">Отбасыммен келемін</span>
+      <span class="rsvp-btn-arrow">→</span>
+    </a>
+    <a class="rsvp-btn" href="https://wa.me/77052739999?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7!%20%D3%A8%D0%BA%D1%96%D0%BD%D1%96%D1%88%D0%BA%D0%B5%20%D0%BE%D1%80%D0%B0%D0%B9%2C%20%D0%BA%D0%B5%D0%BB%D0%B5%20%D0%B0%D0%BB%D0%BC%D0%B0%D0%B9%D0%BC%D1%8B%D0%BD." target="_blank">
+      <span class="rsvp-btn-text">Өкінішке орай, келе алмаймын</span>
+      <span class="rsvp-btn-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <div class="divider" style="margin-bottom:22px;margin-top:28px"><div class="divider-line"></div><div class="divider-gem"></div><div class="divider-line"></div></div>
+    <div class="footer-script">Зият <span>&</span> Ардақ</div>
+    <div class="footer-sub">отбасы атынан шын жүректен шақырамыз</div>
+    <svg style="display:block;margin:20px auto 0;opacity:0.28" width="80" height="14" viewBox="0 0 80 14">
+      <line x1="0" y1="7" x2="28" y2="7" stroke="#C9A84C" stroke-width="0.5"/>
+      <line x1="52" y1="7" x2="80" y2="7" stroke="#C9A84C" stroke-width="0.5"/>
+      <polygon points="40,1 44,7 40,13 36,7" fill="none" stroke="#C9A84C" stroke-width="0.7"/>
+      <circle cx="40" cy="7" r="1.5" fill="#C9A84C"/>
+    </svg>
+  </div>
+</div>
+
+<script>
+function tick(){
+  var t=new Date('2026-08-02T18:00:00+06:00')-new Date();
+  if(t<0){['cd-d','cd-h','cd-m','cd-s'].forEach(function(id){document.getElementById(id).textContent='00'});return;}
+  document.getElementById('cd-d').textContent=String(Math.floor(t/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor((t%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor((t%3600000)/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor((t%60000)/1000)).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
